@@ -1,17 +1,24 @@
-function playGame(playerInput) {
-    clearMessages();
+{
+  const playGame = function(playerInput) {
+    const clearMessages = function() {
+      console.clear ();
+    };
   
     console.log('Gracz wpisał: ' + playerInput);
   
-    let playerMove = 'nieznany ruch';
+    const playerMove = function () {
     if (playerInput == '1') {
       playerMove = 'kamień';
     } else if (playerInput == '2') {
       playerMove = 'papier';
     } else if (playerInput == '3') {
       playerMove = 'nożyce';
-    }
-  
+     } else {
+      return 'nieznany ruch';
+
+     }
+    };
+    
     console.log(playerMove);
     alert('Twój ruch to: ' + playerMove);
   
@@ -60,3 +67,4 @@ function playGame(playerInput) {
   document.getElementById('play-scissors').addEventListener('click', function () {
     playGame('3');
   });
+}
