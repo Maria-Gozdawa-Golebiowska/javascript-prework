@@ -19,8 +19,9 @@
      }
     };
     
-    console.log(playerMove);
-    alert('Twój ruch to: ' + playerMove);
+    const playerMoveResult = playerMove();
+    console.log(playerMoveResult);
+    alert('Twój ruch to:' + playerMoveResult);
   
     // komputer
     let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -33,19 +34,19 @@
       computerMove = 'nożyce';
     }
   
-    console.log('Ruch komputera to: ' + computerMove);
-    alert('Ruch komputera to: ' + computerMove);
+    console.log ('Ruch komputera to:' + computerMove);
+    alert('Ruch komputera to:' + computerMove);
   
     
-    if (playerMove === 'nieznany ruch') {
+    if (playerMoveResult === 'nieznany ruch') {
       console.log('Niepoprawy wybór gracza. Wybierz 1, 2 lub 3.');
-    } else if (playerMove === computerMove) {
+    } else if (playerMoveResult === computerMove) {
       console.log('Remis');
       alert('Remis');
     } else if (
-      (playerMove == 'kamień' && computerMove == 'nożyce') ||
-      (playerMove == 'papier' && computerMove == 'kamień') ||
-      (playerMove == 'nożyce' && computerMove == 'papier')
+      (playerMoveResult == 'kamień' && computerMove == 'nożyce') ||
+      (playerMoveResult == 'papier' && computerMove == 'kamień') ||
+      (playerMoveResult == 'nożyce' && computerMove == 'papier')
     ) {
       console.log('Gracz wygrywa!');
       alert('Gracz wygrywa!');
@@ -53,7 +54,7 @@
       console.log('Komputer wygrywa!');
       alert('Komputer wygrywa!');
     }
-  }
+  };
   
   // Wywołanie funkcji playGame 
   document.getElementById('play-rock').addEventListener('click', function () {
